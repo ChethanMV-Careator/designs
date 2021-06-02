@@ -1,3 +1,5 @@
+
+
 import React, { Component } from "react";
 import { Layout, Breadcrumb, Row, Card } from "antd";
 import { Footer } from "antd/lib/layout/layout";
@@ -12,8 +14,8 @@ export default class dashboard extends Component {
                 <div className="style"></div>
                 <Row>
                     <Layout>
-                        <Content style={{ background: "#f0f0f0", padding: "0 30px" }}>
-                            <Breadcrumb style={{ margin: "16px 0" }}>
+                        <Content className="content">
+                            <Breadcrumb className="breadcrumb">
                                 <Breadcrumb.Item>
                                     <a href="#">Dashboard</a>
                                 </Breadcrumb.Item>
@@ -70,7 +72,6 @@ export default class dashboard extends Component {
                                 </div>
                             </div>
                         </Content>
-                        <Footer style={{ background: "#f0f0f0", padding: 15 }}></Footer>
                     </Layout>
                 </Row>
             </>

@@ -13,33 +13,41 @@ const { Header, Sider, } = Layout;
 class Sidebar extends React.Component {
     state = {
         collapsed: false,
+        isOpen: false
+
     };
 
     toggle = () => {
         this.setState({
             collapsed: !this.state.collapsed,
+            isOpen: !this.state.isOpen
+
         });
     };
 
-    render() {
+    
+    render() {    
+       
+
         return (
             <Layout>
                 <Sider trigger={null} collapsible collapsed={this.state.collapsed} className="sidebar">
+                    {/* <img src="../../Images/Logo.svg" alt="" className="img" /> */}
 
                     <Menu mode="inline" defaultSelectedKeys={['1']} className="menu">
-                        <Menu.Item key="1" >
-                            <img src="../../Images/Logo.svg" alt="" className="img" />
+                        <Menu.Item>
+                            <img src="../../Images/Logo.svg" alt="" className="img"/>
                         </Menu.Item>
-                        <Menu.Item key="2" icon={< DashboardOutlined />}>
+                        <Menu.Item key="1" icon={< DashboardOutlined />}>
                             Dashboard
                         </Menu.Item>
-                        <Menu.Item key="3" icon={<UserOutlined />}>
+                        <Menu.Item key="2" icon={<UserOutlined />}>
                             Users
                         </Menu.Item>
 
                     </Menu>
                 </Sider>
-                <Layout className="nabar">
+                <Layout className="navbar">
                     <Header className="toggle">
                         {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                             className: 'trigger',
