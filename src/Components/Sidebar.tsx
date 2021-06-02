@@ -27,8 +27,6 @@ class Sidebar extends React.Component {
 
     
     render() {    
-       
-
         return (
             <Layout>
                 <Sider trigger={null} collapsible collapsed={this.state.collapsed} className="sidebar">
