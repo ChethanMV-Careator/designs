@@ -1,5 +1,3 @@
-// Dashboard
-
 import React, { Component } from "react";
 import { Layout, Breadcrumb, Row, Card } from "antd";
 import { Footer } from "antd/lib/layout/layout";
