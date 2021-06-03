@@ -1,13 +1,16 @@
 import { Layout, Menu } from 'antd';
+import Topnav from "../Components/Topnav"
 import {
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
+    
+    MenuOutlined,
     DashboardOutlined,
     UserOutlined
 } from '@ant-design/icons';
+
+
 import React from 'react';
 import Dashboard from './Dashboard';
-
+import "../Styles/style.css"
 const { Header, Sider, } = Layout;
 
 class Sidebar extends React.Component {
@@ -21,33 +24,36 @@ class Sidebar extends React.Component {
         });
     };
 
-    render() {
+    
+    render() {    
         return (
             <Layout>
                 <Sider trigger={null} collapsible collapsed={this.state.collapsed} className="sidebar">
-
+                    {/* <img src="../../Images/Logo.svg" alt="" className="img" /> */}
                     <Menu mode="inline" defaultSelectedKeys={['1']} className="menu">
-                        <Menu.Item key="1" >
-                            <img src="../../Images/Logo.png" alt="" className="img" />
+                        <Menu.Item>
+                            {/* <CopyrightIcon /> */}
+                            <img src="../../Images/Logo.svg" alt="" className="img"/>
                         </Menu.Item>
-                        <Menu.Item key="2" icon={< DashboardOutlined />}>
-                            Dashboard
+                        {/* <h3>Welcome to Admin</h3> */}
+                        <Menu.Item key="1" icon={< DashboardOutlined/>}>
+                            My Workspace
                         </Menu.Item>
-                        <Menu.Item key="3" icon={<UserOutlined />}>
-                            Users
+                        <Menu.Item key="2" icon={<UserOutlined/>}>
+                            Employees
                         </Menu.Item>
-
                     </Menu>
                 </Sider>
-                <Layout className="nabar">
+                <Layout className="navbar">
                     <Header className="toggle">
-                        {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                        {React.createElement(this.state.collapsed ? MenuOutlined : MenuOutlined, {
                             className: 'trigger',
                             onClick: this.toggle,
                         })}
-
+                        <Topnav/>
+                        {/* <AdminPageNavBar/> */}
                     </Header>
-                    <Dashboard />
+                    <Dashboard/>
                 </Layout>
             </Layout>
         );
